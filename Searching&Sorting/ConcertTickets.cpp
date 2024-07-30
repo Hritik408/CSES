@@ -29,15 +29,14 @@ int main() {
             if(nrr[mid] <= arr[i]){
                 ans = nrr[mid];
                 s = mid + 1;
-            } else {
-                e = mid - 1;
             }
+             else  e = mid - 1;
         }
 
         if(ans != -1) {
             cout << ans << endl;
-            // remove used ticket as shift the remaining one's
-            for(int j = 0; j < n; j++) {
+
+            for(int j = 0; j < n; j++) { // remove used ticket
                 if(nrr[j] == ans) {
                     for(int k = j; k < n - 1; k++) {
                         nrr[k] = nrr[k + 1];
